@@ -8,9 +8,7 @@ html,body{
     min-height: 100%;
     font: 20px 'Avenir', "Microsoft YaHei", Helvetica, Arial, sans-serif;
 }
-body{
-    overflow-y: auto;
-}
+
 h1,h2,h3,p,ul,html,body{
     margin: 0;
     padding: 0;
@@ -28,6 +26,9 @@ ul{
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: @font-color;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
     //底部链接部分
     // ul
     .footer-link-page{
@@ -38,6 +39,7 @@ ul{
         font-size: @footer-size;
         position: fixed;
         bottom: 0;
+        z-index: 100;
         border-top: 1px solid #ccc;
         display: flex;
         justify-content: space-around;
@@ -70,7 +72,7 @@ ul{
                 display: block;
                 width: 20px;
                 margin: 0 auto;
-                height: 20px;
+                height: 20px; 
                 &.fir{
                     background: url("../assets/home.svg") no-repeat center center / cover;
                 }

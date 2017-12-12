@@ -1,0 +1,111 @@
+// 定义全局变量
+@theme-color:#1a780d;
+
+.me{
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+// 已经登录时的背景色处理
+.loged-box{
+    background-color: rgba(204, 197, 197, 0.521);
+}
+
+// 登录和未登录时的公共header部分
+.me-header{ 
+    @height: 180px;
+    @font-color: #2c3e50;
+    width: 100%;
+    height: @height;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #ccc;
+    &.loged{
+        background: url("../assets/me-big-pic.png") no-repeat center center / cover;
+        .pic-box{
+            background: url("../assets/me-small-pic.png") no-repeat center center / cover;
+        }
+    }
+    &.notLoged{
+        background: repeating-linear-gradient(#701313, #cd6600 100%);
+        .pic-box{
+            background-color: pink;
+        }
+    }
+    .pic-box{
+        display: block;
+        @size: 126px;
+        width: @size;
+        height: @size;
+        margin: 10px auto 0;
+        border-radius: 50%;
+        text-align: center;
+        line-height: @size;
+        color: @font-color;
+    }
+    .nickname,span{
+        display: inline-block;
+        margin-top: 5px;
+        color: #fff;
+    }
+    span.pageActive{
+        color: @theme-color;
+    }
+}
+
+// 登录时的主题部分
+.me-main{
+        @margin-top: 10px;
+        margin-top: @margin-top; 
+        ul{
+            li{
+                padding: 14px 8px;
+                border-top: 1px solid #ccc;
+                font-size: 15px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #fff;
+                &:nth-child(3){
+                    margin-top: @margin-top;
+                }
+                &:nth-child(5){
+                    margin-top: @margin-top;
+                }
+                &:last-child{
+                    border-bottom: 1px solid #ccc;
+                }
+                i{
+                    display: inline-block;
+                    @size: 10px;
+                    width: @size;
+                    height: @size;
+                    background: url("../assets/next.svg") no-repeat center center / cover;
+                }
+            }
+        }
+    }
+
+// 登录和未登录时的公共form表格部分
+form{
+    margin-top: 30px;
+    text-align: left;
+    font-size: 18px;
+    input{
+        height: 50px;
+        font-size:16px;
+    }
+    .btn{
+        width: 100%;
+        height: 50px;
+        margin: 30px 0 200px;
+        font-size: 22px;
+        color: #fff;
+        outline: none;
+        border: none;
+        background-color: rgb(204, 51, 51);
+        &:active{
+            background-color: rgba(204, 51, 51,.6);
+        }
+    }
+}
