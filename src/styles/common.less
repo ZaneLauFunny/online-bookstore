@@ -14,9 +14,11 @@ h1,h2,h3,p,ul,html,body{
     margin: 0;
     padding: 0;
 }
-
+ul{
+    list-style: none;
+}
 // 定义全局变量
-@theme-color: #2e372f;
+@focus-color: #1a780d;
 @font-color: #2c3e50;
 
 // 细节样式
@@ -25,14 +27,60 @@ h1,h2,h3,p,ul,html,body{
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: @font-color;
-}
-// header部分
-.home{
-    width: 100%;
-    .header{
-        @header-height: 100px;
+    //底部链接部分
+    // ul
+    .footer-link-page{
+        @footer-height: 60px;
         width: 100%;
-        height: @header-height;
-        background-color: @theme-color;
+        height: @footer-height;
+        position: fixed;
+        bottom: 0;
+        border-top: 1px solid #ccc;
+        display: flex;
+        justify-content: space-around;
+        // li
+        li{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            // li路由被选中时样式
+            &.router-link-active{
+                color: #1a780d;
+                i.fir{
+                    background-image: url("../assets/home-focus.svg");
+                }
+                i.sec{
+                    background-image: url("../assets/category-focus.svg");
+                }
+                i.thi{
+                    background-image: url("../assets/cart-focus.svg");
+                }
+                i.for{
+                    background-image: url("../assets/me-focus.svg");
+                }
+            }
+            // 图标样式
+            i{
+                display: block;
+                width: 20px;
+                margin: 0 auto;
+                height: 20px;
+                &.fir{
+                    background: url("../assets/home.svg") no-repeat center center / cover;
+                }
+                &.sec{
+                    background: url("../assets/category.svg") no-repeat center center / cover;
+                }
+                &.thi{
+                    background: url("../assets/cart.svg") no-repeat center center / cover;
+                }
+                &.for{
+                    background: url("../assets/me.svg") no-repeat center center / cover;
+                }
+            }
+            
+        }
     }
 }
+

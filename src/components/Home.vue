@@ -1,9 +1,13 @@
 <template>
     <div class="home">
+        <!-- header部分 -->
         <div class="header">
+            
+        </div>
+        <!-- 内容部分 -->
+        <div class="main">
 
         </div>
-        
     </div>
 </template>
 
@@ -20,5 +24,5 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
-    @import '../styles/common.less';
+    
 </style>

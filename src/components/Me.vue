@@ -1,6 +1,8 @@
 <template>
     <div class="me">
-        <h1>{{ msg }}</h1>
+        <div class="header">
+            <div class="title">{{ title }}</div>
+        </div>
     
     </div>
 </template>
@@ -8,6 +10,7 @@
 <script>
     export default {
         name: "Me",
+        props: ['title'],
         data() {
             return {
                 
