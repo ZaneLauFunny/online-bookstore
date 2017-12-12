@@ -1,15 +1,22 @@
 // 导入子组件
-import MeHeader from '../components/me-components/MeHeader.vue'
-import MeMain from '../components/me-components/MeMain.vue'
-import MeFooter from '../components/me-components/MeFooter.vue'
+import MeLoged from '../components/MeLoged.vue'
+
 
 
 export default{
     name: "Home",
     components: {
-        MeHeader,
-        MeMain,
-        MeFooter
+        MeLoged
+    },
+    data() {
+        return{
+            loged: false,
+            nickname: "punk1ee",
+            mainList: ["设置个人资料","收货地址管理","我的订单","我的评价","商品收藏","店铺收藏","浏览记录"]
+        }
+    },
+    computed: {
+
     }
 }
 
