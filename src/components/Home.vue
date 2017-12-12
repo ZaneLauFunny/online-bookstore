@@ -1,6 +1,8 @@
 <template>
     <div class="home">
-        <h1>{{ msg }}</h1>
+        <div class="header">
+
+        </div>
         
     </div>
 </template>
@@ -18,5 +20,5 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
-    
+    @import '../styles/common.less';
 </style>

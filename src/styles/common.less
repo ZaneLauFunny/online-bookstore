@@ -1,0 +1,38 @@
+// 定义默认样式
+*{
+    box-sizing: border-box;
+    user-select: none;
+}
+html,body{
+    min-width: 100%;
+    font: 20px 'Avenir', "Microsoft YaHei", Helvetica, Arial, sans-serif;
+}
+body{
+    overflow-y: auto;
+}
+h1,h2,h3,p,ul,html,body{
+    margin: 0;
+    padding: 0;
+}
+
+// 定义全局变量
+@theme-color: #2e372f;
+@font-color: #2c3e50;
+
+// 细节样式
+#app {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: @font-color;
+}
+// header部分
+.home{
+    width: 100%;
+    .header{
+        @header-height: 100px;
+        width: 100%;
+        height: @header-height;
+        background-color: @theme-color;
+    }
+}
