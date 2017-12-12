@@ -1,16 +1,13 @@
 <template>
-    <div class="me">
-        <div class="header">
-            <div class="title">{{ title }}</div>
-        </div>
-    
+    <div class="me-main">
+             
     </div>
 </template>
 
 <script>
     export default {
-        name: "Me",
-        props: ['title'],
+        name: "MeMain",
+        props: [],
         data() {
             return {
                 
@@ -20,6 +17,6 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="less" scoped>
     
 </style>

@@ -2,10 +2,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // 导入主组件
-import Home from '@/components/Home'
-import Category from '@/components/Category'
-import Cart from '@/components/Cart'
-import Me from '@/components/Me'
+import Home from '@/Home'
+import Category from '@/Category'
+import Cart from '@/Cart'
+import Me from '@/Me'
 
 Vue.use(Router)
 
