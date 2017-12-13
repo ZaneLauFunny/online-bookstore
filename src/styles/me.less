@@ -1,6 +1,6 @@
 // 定义全局变量
 @theme-color:#1a780d;
-
+@btn-bgc: rgb(204, 51, 51);
 .me{
     min-height: 100%;
     overflow-x: hidden;
@@ -29,7 +29,8 @@
     &.notLoged{
         background: repeating-linear-gradient(#701313, #cd6600 100%);
         .pic-box{
-            background-color: pink;
+            background-color: #fff;
+            font-size: 15px;
         }
     }
     .pic-box{
@@ -95,6 +96,12 @@ form{
         height: 50px;
         font-size:16px;
     }
+    span.input-write{
+        background: url("../assets/input-write.svg") no-repeat;
+    }
+    span.input-false{
+        background: url("../assets/input-false.svg") no-repeat;
+    }
     .btn{
         width: 100%;
         height: 50px;
@@ -103,9 +110,27 @@ form{
         color: #fff;
         outline: none;
         border: none;
-        background-color: rgb(204, 51, 51);
+        background-color: @btn-bgc;
         &:active{
-            background-color: rgba(204, 51, 51,.6);
+            background-color: lighten(@btn-bgc,30%);
+        }
+    }
+    div{
+        position: relative; 
+        span{
+            display: inline-block;
+            position: absolute;
+            top: 4px;
+        }
+        span:not(.act-remind){
+            width: 20px;
+            height: 20px;
+            left: calc(~ "100% - 30px");
+        }
+        span.act-remind{
+            left: calc(~ "100% - 84px");
+            font-size: 14px;
+            color: @btn-bgc;
         }
     }
 }
