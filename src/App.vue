@@ -18,14 +18,14 @@
                 <i class="for"></i>
                 <span>个人中心</span>
             </router-link>
-            
         </ul>
     </div>
 </template>
 
 <script>
     export default {
-        name: "app"
+        name: "app",
+        
     };
 
 </script>

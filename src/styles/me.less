@@ -1,15 +1,20 @@
 // 定义全局变量
 @theme-color:#1a780d;
 @btn-bgc: rgb(204, 51, 51);
+
+// 主体默认样式处理
 .me{
-    min-height: 100%;
+    height: ~"calc(100% - 60px)";
     overflow-x: hidden;
     overflow-y: auto;
+    position: relative;
 }
-
 // 已经登录时的背景色处理
 .loged-box{
-    background-color: rgba(204, 197, 197, 0.521);
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
 }
 
 // 登录和未登录时的公共header部分
@@ -24,6 +29,9 @@
         background: url("../assets/me-big-pic.png") no-repeat center center / cover;
         .pic-box{
             background: url("../assets/me-small-pic.png") no-repeat center center / cover;
+        }
+        .nickname{
+            color: @theme-color;
         }
     }
     &.notLoged{
@@ -54,28 +62,17 @@
     }
 }
 
-// 登录时的主题部分
+// 已登录界面的主体部分
 .me-main{
-        @margin-top: 10px;
-        margin-top: @margin-top; 
         ul{
             li{
                 padding: 14px 8px;
-                border-top: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
                 font-size: 15px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 background-color: #fff;
-                &:nth-child(3){
-                    margin-top: @margin-top;
-                }
-                &:nth-child(5){
-                    margin-top: @margin-top;
-                }
-                &:last-child{
-                    border-bottom: 1px solid #ccc;
-                }
                 i{
                     display: inline-block;
                     @size: 10px;
@@ -89,11 +86,13 @@
 
 // 登录和未登录时的公共form表格部分
 form{
-    margin-top: 30px;
     text-align: left;
     font-size: 18px;
+    label{
+        font-weight: normal;
+    }
     input{
-        height: 50px;
+        height: 45px;
         font-size:16px;
     }
     span.input-write{
@@ -103,9 +102,10 @@ form{
         background: url("../assets/input-false.svg") no-repeat;
     }
     .btn{
-        width: 100%;
+        width: 96%;
         height: 50px;
-        margin: 30px 0 200px;
+        display: block;
+        margin: 30px auto;
         font-size: 22px;
         color: #fff;
         outline: none;
@@ -115,9 +115,9 @@ form{
             background-color: lighten(@btn-bgc,30%);
         }
     }
-    div{
+    & > div.form-group{
         position: relative; 
-        span{
+        & > span{
             display: inline-block;
             position: absolute;
             top: 4px;
@@ -133,4 +133,92 @@ form{
             color: @btn-bgc;
         }
     }
+}
+
+// 已登录时的详情页面公共样式处理
+form.detail-page{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #fff;
+    border-left: 1px solid #ccc;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    transition: all .3s linear;
+    // 顶部公共样式
+    .per-title{
+        display: flex;
+        justify-content: center;
+        height: 60px;
+        color: #fff;
+        background-color: @theme-color;
+        span{
+            line-height: 60px;
+        }
+        span:first-child{
+            position: absolute;
+            left: 7px;
+        }
+        span:last-child{
+            margin: 0 auto;
+        }
+    }
+    .per-main{
+        margin-top: 5px;
+        .form-group, .sexy{
+            display: flex;
+            align-items: center;
+            &.per-describle{
+                align-items: start;
+                textarea{
+                    width: 77%;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    &:focus{
+                        border-color: #66afe9; 
+                        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+                    }
+                }
+            }
+            label{
+                width: 23%;
+                padding: 6px 0 0 5px;
+            }
+            input{
+                width: 77%;
+                &.sexy-input{
+                    width: auto;
+                    margin-left: 15px;
+                    &.sexy-input-fir{
+                        margin-left: 0;
+                    } 
+                }  
+            }
+            //所在城市下拉样式
+            .diyInput{
+                width: 77%;
+                height: 45px;
+                line-height: 45px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 16px;
+                color: #555;
+                transition: all .25s linear;
+                display: flex;
+                justify-content: space-between;
+                &:active{
+                    border-color: #66afe9; 
+                    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+                }
+                   
+            }
+        }
+    }
+}
+// 显示详情页
+form.showPage{
+    left: 0;
+    top: 0;
 }
