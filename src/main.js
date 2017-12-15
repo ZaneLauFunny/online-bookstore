@@ -4,12 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import BootCss from 'bootcss'
-// 定义全局变量
-window.Global = {
-    loginState: false,
-    showNickname: ''
-}
-
+import Bootstrap from 'bootstrap'
 // 
 
 Vue.config.productionTip = false
