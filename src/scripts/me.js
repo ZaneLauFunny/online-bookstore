@@ -1,11 +1,11 @@
 // 导入子组件
-import MeHeader from '../components/me-components/MeHeader.vue'
-import MeMain from '../components/me-components/MeMain.vue'
-import MeFooter from '../components/me-components/MeFooter.vue'
+import MeHeader from '../components/MeHeader.vue'
+import MeMain from '../components/MeMain.vue'
+import MeFooter from '../components/MeFooter.vue'
 
 
 export default{
-    name: "Home",
+    name: "Me",
     components: {
         MeHeader,
         MeMain,
