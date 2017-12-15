@@ -4,12 +4,12 @@
     user-select: none;
 }
 html,body{
-    min-width: 100%;
+    width: 100%;
     height: 100%;
     font: 20px 'Avenir', "Microsoft YaHei", Helvetica, Arial, sans-serif;
 }
-body{
-    overflow-y: auto;
+input,textarea,select{
+    outline: none;
 }
 h1,h2,h3,p,ul,html,body{
     margin: 0;
@@ -42,23 +42,33 @@ h2{
 
 // 细节样式
 #app {
+    height: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     height: 100%;
     text-align: center;
     color: @font-color;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
     //底部链接部分
     // ul
     .footer-link-page{
+        @footer-size: 15px;
         @footer-height: 60px;
         width: 100%;
         height: @footer-height;
+        font-size: @footer-size;
+        // position: fixed;
+        // bottom: 0;
+        // z-index: 100;
         border-top: 1px solid #ccc;
         display: flex;
         justify-content: space-around;
-        background-color: #ffffff;
+        background-color: #fff;
         // li
         li{
+            width: 25%;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -84,7 +94,7 @@ h2{
                 display: block;
                 width: 20px;
                 margin: 0 auto;
-                height: 20px;
+                height: 20px; 
                 &.fir{
                     background: url("../assets/home.svg") no-repeat center center / cover;
                 }

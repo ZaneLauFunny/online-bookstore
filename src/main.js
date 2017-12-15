@@ -5,8 +5,7 @@ import App from './App'
 import router from './router'
 import BootCss from 'bootcss'
 import Bootstrap from 'bootstrap'
-
-
+// 
 
 Vue.config.productionTip = false
 
