@@ -1,6 +1,8 @@
 <template>
     <div class="category">
-        
+        <div class="header">
+            <h2>分类</h2>
+        </div>
     
     </div>
 </template>
