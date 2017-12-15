@@ -1,0 +1,60 @@
+.cart{
+    @diff : 60px;
+    //height:e("calc(100% - 60px)");
+    position: relative;
+    background-color: #f2f2f2;
+    .showNone{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .showBlock{
+        
+        background-color: #fff;
+        li{
+            border-bottom: 1px solid rgb(230, 227, 227);
+            height: 120px;
+            position: relative;
+            div{
+                position: absolute;
+                label{
+                    white-space: nowrap;
+                    text-align: left;
+                    font-size: 14px;
+                    font-weight: 400;
+                    font-style: normal;
+                    text-decoration: none;
+                    font-family: 微软雅黑;
+                }
+                &:nth-child(1){
+                    margin-top: 15px;
+                    width: 78px;
+                    height: 98px;
+                    img{                       
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                &:nth-child(2){
+                    color: rgb(51, 102, 204);
+                    left: 25%;
+                    top: 20px;
+                }
+                &:nth-child(3){
+                    color: rgb(121, 121, 121);
+                    left: 25%;
+                    top: 45px;
+                }
+                &:nth-child(4){
+                    color: rgb(204, 102, 51);
+                    left: 25%;
+                    top:70px;
+                    label{
+                        font-size:18px;
+                    }
+                }
+            }
+        }
+    }
+}
