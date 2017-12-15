@@ -17,8 +17,7 @@
             <router-link :to="{name: 'me'}" tag="li">
                 <i class="for"></i>
                 <span>个人中心</span>
-            </router-link>
-            
+            </router-link>           
         </ul>
     </div>
 </template>
