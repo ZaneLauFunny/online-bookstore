@@ -1,5 +1,12 @@
+// 导入顶部标题组件
+import HeaderBlock from "../components/HeaderBlock"
+
 export default{
     name: "Me",
+    components: {
+        // 头部组件
+        HeaderBlock
+    },
     data() {
         return{
             // 1.初始化登录状态
@@ -108,8 +115,8 @@ export default{
             }
         }
     },
-    // created钩子函数创建的时候data已经被挂载了，所以在刷新页面的时候可以通过这个函数来加载登录状态和用户名
     created: function(){
+        // 在刷新页面的时候可以通过这个函数来加载登录状态和用户名
         if(sessionStorage.users){
             this.loged = true;
             this.nickname = sessionStorage.users.substr(1,sessionStorage.users.length - 2);

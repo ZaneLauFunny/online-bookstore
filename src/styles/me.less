@@ -14,7 +14,6 @@
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    
 }
 
 // 登录和未登录时的公共header部分
@@ -23,7 +22,6 @@
     @font-color: #2c3e50;
     width: 100%;
     height: @height;
-    border: 1px solid transparent;
     border-bottom: 1px solid #ccc;
     &.loged{
         background: url("../assets/me-big-pic.png") no-repeat center center / cover;
@@ -46,19 +44,24 @@
         @size: 126px;
         width: @size;
         height: @size;
-        margin: 10px auto 0;
+        margin: 0 auto;
+        transform: translateY(10px);
         border-radius: 50%;
         text-align: center;
         line-height: @size;
         color: @font-color;
     }
     .nickname,span{
+        transform: translateY(10px);
         display: inline-block;
-        margin-top: 5px;
         color: #fff;
+        margin-top: 5px;
     }
     span.pageActive{
         color: @theme-color;
+        padding-bottom: 5px;
+        border-bottom: 2px solid @theme-color;
+        border-radius: 1px;
     }
 }
 
@@ -105,7 +108,7 @@ form{
         width: 96%;
         height: 50px;
         display: block;
-        margin: 30px auto;
+        margin: 40px auto;
         font-size: 22px;
         color: #fff;
         outline: none;
@@ -114,6 +117,9 @@ form{
         &:active{
             background-color: lighten(@btn-bgc,30%);
         }
+    }
+    .btn2{
+        margin: 0 auto;
     }
     & > div.form-group{
         position: relative; 
@@ -151,11 +157,11 @@ form.detail-page{
     .per-title{
         display: flex;
         justify-content: center;
-        height: 60px;
+        height: 50px;
         color: #fff;
         background-color: @theme-color;
         span{
-            line-height: 60px;
+            line-height: 50px;
         }
         span:first-child{
             position: absolute;

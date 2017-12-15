@@ -2,6 +2,7 @@
     <div class="me">
         <!-- 已登录界面 -->
         <div v-if="loged" class="loged-box">
+            <HeaderBlock header-text="个人中心" />
             <div class="user-box me-header loged">
                 <div class="pic-box"></div>
                 <p class="nickname">{{nickname}}</p>  
@@ -123,7 +124,7 @@
                 </div>
             </div>
             <div>
-                <button type="button" class="btn" @click="perRevise">确认修改</button>
+                <button type="button" class="btn2  btn" @click="perRevise">确认修改</button>
             </div>
         </form>
         <!-- 收货地址管理 -->
@@ -225,6 +226,5 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
     @import "./styles/me.less";
-
 </style>
 

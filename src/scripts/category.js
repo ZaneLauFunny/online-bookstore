@@ -3,7 +3,7 @@
 
 
 export default{
-    name: "Home",
+    name: "Category",
     components: {
         
     }
