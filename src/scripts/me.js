@@ -4,7 +4,7 @@ import MeLoged from '../components/MeLoged.vue'
 
 
 export default{
-    name: "Home",
+    name: "Me",
     components: {
         MeLoged
     },

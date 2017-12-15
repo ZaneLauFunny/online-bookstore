@@ -6,6 +6,7 @@ import router from './router'
 import BootCss from 'bootcss'
 
 
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
