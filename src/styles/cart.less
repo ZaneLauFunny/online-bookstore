@@ -1,0 +1,157 @@
+// 定义全局变量
+@theme-color:#1a780d;
+@font-color: #2c3e50;
+@btn-bgc: rgb(204, 51, 51);
+
+
+
+
+// 设置本页页面高度
+.cart{
+    // 图书列表pading宽度
+    @cartPadding: 10px;
+
+    height: ~"calc(100% - 60px)";
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #fff;
+    // 内容部分
+    .cart-main{
+        position: relative;
+        font-size: 16px;
+        // 编辑和删除部分
+        .cart-eddit-delete{
+            position: absolute;
+            top: 5px;
+            right: @cartPadding;
+            // 编辑按钮
+            .cart-eddit{
+                color: @font-color;
+            }
+            // 取消、删除按钮
+            div{
+                .cart-cancle{
+                    display: inline-block;
+                    transform: translateX(-10px);
+                }
+                .cart-delete{
+                    color: @btn-bgc;
+                }
+            }
+        }
+        // 图书列表部分
+        .cart-books-wrap{
+            transform: translateY(30px);
+            // 图书信息
+            .cart-book-list{
+                height: 132px;
+                display: flex;
+                border-top: 1px solid #ccc;  
+                border-bottom: 1px solid #ccc;
+                position: relative;
+                &:first-child{
+                    border-bottom: none;
+                }
+                &:last-child{
+                    border-top: none;
+                }
+                // 勾选框
+                .cart-select-box{
+                    position: absolute;
+                    top: 50%;
+                    left: 10px;
+                    transform: translateY(-50%);
+                    i{
+                        display: block;
+                        width: 20px;
+                        height: 20px;
+                        background-color: red;
+                        &.cart-not-select{
+                            background: url("../assets/notSelect.svg") center center no-repeat / cover;
+                        }
+                        &.cart-select{
+                            background: url("../assets/select.svg") center center no-repeat / cover;
+                        }
+                    }
+                }  
+                .cart-book-box{
+                    width: 100%;
+                    height: 100%;
+                    padding-left: @cartPadding;
+                    display: flex;
+                    transition: all .25s linear;
+                    &.moveBookBox{
+                        transform: translateX(30px);
+                    }
+                    // 图书图片部分
+                    .cart-book-img{
+                        width: 86px;
+                        height: 100%;
+                    }
+                    // 图书信息部分
+                    .cart-book-info{
+                        width: ~"calc(100% - 86px)";
+                        text-align: left;
+                        padding: @cartPadding;
+                        position: relative;
+                        & > p{
+                            margin-bottom: @cartPadding;
+                            &.cart-book-name{
+                                margin-top: @cartPadding;
+                            }
+                            &.cart-book-name{
+                                color: @theme-color;
+                            }
+                            &.cart-book-price{
+                                color: @btn-bgc;
+                            }
+                        }
+                        // 图书计数部分
+                        .cart-count-box{
+                            position: absolute;
+                            bottom: @cartPadding;
+                            right: @cartPadding;
+                            display: flex;
+                            span{
+                                display: block;
+                                width: 3 * @cartPadding;
+                                height: 2 * @cartPadding;
+                                border: 1px solid #ccc;
+                                text-align: center;
+                                // min
+                                &.cart-min{
+                                    background: url("../assets/cart-min.svg") center center no-repeat / 40%;
+                                    &:active{
+                                        background-color: lighten(@font-color,40%)
+                                    }
+                                }
+                                // count
+                                &.cart-count{
+                                    min-width: 3 * @cartPadding;
+                                    width: auto;
+                                    border-left: none;
+                                }
+                                // add
+                                &.cart-add{
+                                    background: url("../assets/cart-add.svg") center center no-repeat / 40%;
+                                    border-left: none;
+                                    &:active{
+                                        background-color: lighten(@font-color,30%)
+                                    }
+                                }
+                                // 不能再增加或者减少
+                                &.cantClick{
+                                    background-color: lighten(@font-color,3%);
+                                    border: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                // & > div{
+                    
+                // }
+            }
+        }
+    }
+}
