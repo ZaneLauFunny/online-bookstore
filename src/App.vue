@@ -1,6 +1,8 @@
 <template>
     <div id="app">
+        <!-- 中间内容部分 -->
         <router-view/>
+        <!-- 底部路由部分 -->
         <ul class="footer-link-page">
             <router-link :to="{name: 'home'}" tag="li" exact>
                 <i class="fir"></i>
@@ -24,7 +26,7 @@
 
 <script>
 export default {
-  name: "app"
+    name: "app"
 };
 </script>
 

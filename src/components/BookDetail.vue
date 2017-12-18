@@ -70,7 +70,6 @@ export default {
   methods:{
       setDetail(){
           this.detail = this.$props.bookshow;
-          console.log(this.detail)
           }
   },
   mounted(){

@@ -14,9 +14,10 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
     .header-block{
+        width: 100%;
         height: 50px;
         text-align: center;
-        background-color: #1a780d;
+        background-color: #2c3e50;
         color: #fff;
     }
     .header-block > h4{

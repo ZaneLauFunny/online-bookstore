@@ -1,8 +1,9 @@
 <template>
     <div class="me">
+        <!-- header部分 -->
+        <HeaderBlock header-text="个人中心" />
         <!-- 已登录界面 -->
         <div v-if="loged" class="loged-box">
-            <HeaderBlock header-text="个人中心" />
             <div class="user-box me-header loged">
                 <div class="pic-box"></div>
                 <p class="nickname">{{nickname}}</p>  
@@ -83,7 +84,7 @@
         <form class="personal detail-page" :class="{showPage: personal.showPer}">
             <div class="per-title">
                 <span class="back-me" @click="perBackMe"><</span>
-                <span>个人资料</span>
+                <HeaderBlock header-text="个人资料" />
             </div>
             <div class="per-main">
                 <div class="form-group">
@@ -131,7 +132,7 @@
         <form class="address detail-page" :class="{showPage: address.showAdd}">
             <div class="per-title">
                 <span class="back-me" @click="addBackMe"><</span>
-                <span>收货地址</span>
+                <HeaderBlock header-text="收货地址" />
             </div>
             <div class="per-main">
                 <div class="form-group">
@@ -187,35 +188,35 @@
         <form class="order detail-page" :class="{showPage: order.showOrder}">
             <div class="per-title">
                 <span class="back-me" @click="orderBackMe"><</span>
-                <span>个人订单</span>
+                <HeaderBlock header-text="个人订单" />
             </div>
         </form>
         <!-- 我的评价 -->
         <form class="order detail-page" :class="{showPage: judge.showJudge}">
             <div class="per-title">
                 <span class="back-me" @click="judgeBackMe"><</span>
-                <span>我的评价</span>
+                <HeaderBlock header-text="我的评价" />
             </div>
         </form>
         <!-- 商品收藏 -->
         <form class="order detail-page" :class="{showPage: goods.showGoods}">
             <div class="per-title">
                 <span class="back-me" @click="goodsBackMe"><</span>
-                <span>商品收藏</span>
+                <HeaderBlock header-text="商品收藏" />
             </div>
         </form>
         <!-- 店铺收藏 -->
         <form class="order detail-page" :class="{showPage: shop.showShop}">
             <div class="per-title">
                 <span class="back-me" @click="shopBackMe"><</span>
-                <span>店铺收藏</span>
+                <HeaderBlock header-text="店铺收藏" />
             </div>
         </form>
         <!-- 浏览记录 -->
         <form class="order detail-page" :class="{showPage: history.showHistory}">
             <div class="per-title">
                 <span class="back-me" @click="historyBackMe"><</span>
-                <span>浏览记录</span>
+                <HeaderBlock header-text="浏览记录" />
             </div>
         </form>
     </div>

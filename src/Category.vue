@@ -24,7 +24,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
     .category{
-        height: ~"calc(100% - 60px)" ;
+        height: ~"calc(100% - 50px)" ;
         overflow-x: hidden;
         overflow-y: auto;
     }

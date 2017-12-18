@@ -10,21 +10,25 @@
 .cart{
     // 图书列表pading宽度
     @cartPadding: 10px;
-
-    height: ~"calc(100% - 60px)";
+    height: ~"calc(100% - 50px)";
     overflow-x: hidden;
     overflow-y: auto;
     background-color: #fff;
     // 内容部分
     .cart-main{
+        height: ~"calc(100% - 50px)";
+        overflow-x: hidden;
+        overflow-y: auto;
         position: relative;
         font-size: 16px;
         // 编辑和删除部分
         .cart-eddit-delete{
-            position: absolute;
-            top: 5px;
-            right: @cartPadding;
+            // position: absolute;
+            // top: 5px;
+            // right: @cartPadding;
             // 编辑按钮
+            text-align: right;
+            margin: 5px @cartPadding -26px 0;
             .cart-eddit{
                 color: @font-color;
             }
@@ -45,15 +49,11 @@
             // 图书信息
             .cart-book-list{
                 height: 132px;
-                display: flex;
-                border-top: 1px solid #ccc;  
+                display: flex; 
                 border-bottom: 1px solid #ccc;
                 position: relative;
                 &:first-child{
-                    border-bottom: none;
-                }
-                &:last-child{
-                    border-top: none;
+                    border-top: 1px solid #ccc; 
                 }
                 // 勾选框
                 .cart-select-box{
@@ -63,8 +63,8 @@
                     transform: translateY(-50%);
                     i{
                         display: block;
-                        width: 20px;
-                        height: 20px;
+                        width: 13px;
+                        height: 13px;
                         background-color: red;
                         &.cart-not-select{
                             background: url("../assets/notSelect.svg") center center no-repeat / cover;
@@ -98,9 +98,6 @@
                             margin-bottom: @cartPadding;
                             &.cart-book-name{
                                 margin-top: @cartPadding;
-                            }
-                            &.cart-book-name{
-                                color: @theme-color;
                             }
                             &.cart-book-price{
                                 color: @btn-bgc;
@@ -152,6 +149,22 @@
                     
                 // }
             }
+        }
+
+        // 结算按钮部分
+        .cart-pay{
+            margin: 70px 0 40px;
+            .cart-btn{
+                width: 96%;
+                height: 50px;
+                font-size: 22px;
+                color: #fff;
+                outline: none;
+                border: none;
+                border-radius: 4px;
+                background-color: #cc3333;
+            }
+            
         }
     }
 }

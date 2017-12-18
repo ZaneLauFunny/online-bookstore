@@ -10,85 +10,40 @@ export default{
         return{
             // 是否处于编辑状态，默认为true
             eddit: true,
-            
             // 图书信息列表
-            cartBookList: [
-                {   
-                    // 是否显示不被选中勾选框
-                    notSelect: false,
-                    // 是否显示被选中勾选框
-                    select: false,
-                    // 是否移动图书信息
-                    moveBookBox: false,
-                    // 是否隐藏计数框
-                    showCount: true,
-                    cartBookName: "这是什么书？",
-                    cartBookAuthor: "谁是作者？",
-                    cartBookPrice: 91.00,
-                    cartCount: 2,
-                    noMin: false,
-                    noAdd: false,
-                   
-                },
-                {   
-                    // 是否显示不被选中勾选框
-                    notSelect: false,
-                    // 是否显示被选中勾选框
-                    select: false,
-                    // 移动图书信息
-                    moveBookBox: false,
-                    // 是否隐藏计数框
-                    showCount: true,
-                    cartBookName: "这是什么书？",
-                    cartBookAuthor: "谁是作者？",
-                    cartBookPrice: 29.00,
-                    cartCount: 10,
-                    noMin: false,
-                    noAdd: false,
-                },
-                {   
-                    // 是否显示不被选中勾选框
-                    notSelect: false,
-                    // 是否显示被选中勾选框
-                    select: false,
-                    // 移动图书信息
-                    moveBookBox: false,
-                    // 是否隐藏计数框
-                    showCount: true,
-                    cartBookName: "这是什么书？",
-                    cartBookAuthor: "谁是作者？",
-                    cartBookPrice: 99.00,
-                    cartCount: 10,
-                    noMin: false,
-                    noAdd: false,
-                }
-            ],
-             
-            
+            cartBookList: [],
         }
     },
-    // watch: {
-    //     cartBookList(){
-    //         let cartBookList_leb = cartBookList.length;
-    //         for(let i = 0;i < cartBookList_leb;i++){
-    //             cartAdd(i);
-    //             cartMin(i);
-    //         }
-    //     }
-    // },
-    // computed: {
-    //     // 图书列表中每种书的本数
-    //     bookJsonObj() {
-    //         let bookNumArr = [];
-    //         let cartBookList_leb = cartBookList.length;
-    //         for(let i = 0;i < cartBookList_leb;i++){
-    //             bookNumArr.push(cartBookList[i].cartCount);
-    //             return bookNumArr;
-    //             console.log(bookNumArr);
-    //         }
-    //     }
-    // },
+    // 显示加入了购物车的书
+    created() {
+        this.getLocalBookList();
+    },
     methods: {
+        // 从本地存储获取到用户已经点击加入过购物车的书本
+        getLocalBookList() {
+            if(!localStorage.book){
+                return;
+            }else{
+                // 从本地取出书的数组
+                let localBookArr = JSON.parse(localStorage.book),
+                    localBookArr_len = localBookArr.length;
+                for(let i = 0;i < localBookArr_len;i++){
+                    localBookArr[i].notSelect = false;
+                    localBookArr[i].select = false;
+                    localBookArr[i].moveBookBox = false;
+                    localBookArr[i].showCount = true;
+                    localBookArr[i].cartBookImg = localBookArr[i].img;
+                    localBookArr[i].cartBookName = localBookArr[i].name;
+                    localBookArr[i].cartBookAuthor = localBookArr[i].author;
+                    localBookArr[i].cartBookName = localBookArr[i].name;
+                    localBookArr[i].cartBookPrice = localBookArr[i].price;
+                    localBookArr[i].noMin = true
+                    localBookArr[i].cartCount = 1;
+                    localBookArr[i].noAdd = false;
+                }
+                this.cartBookList = localBookArr;
+            }
+        },
         // 点击编辑
         edditBtn() {
             // 展示取消和删除按钮 
