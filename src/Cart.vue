@@ -22,7 +22,7 @@
                         <i class="cart-select" v-if="book.select" @click="showNotSelect(index)"></i>
                     </div>
                     <div class="cart-book-box" :class="{moveBookBox: book.moveBookBox}">
-                        <img class="cart-book-img" src="./assets/logo.png" alt="">
+                        <img class="cart-book-img" :src="book.cartBookImg" alt="">
                         <div class="cart-book-info">
                             <p class="cart-book-name">{{book.cartBookName}}</p>
                             <p class="cart-book-author">{{book.cartBookAuthor}}</p>

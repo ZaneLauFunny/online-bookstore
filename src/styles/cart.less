@@ -10,7 +10,6 @@
 .cart{
     // 图书列表pading宽度
     @cartPadding: 10px;
-
     height: ~"calc(100% - 60px)";
     overflow-x: hidden;
     overflow-y: auto;
@@ -45,15 +44,11 @@
             // 图书信息
             .cart-book-list{
                 height: 132px;
-                display: flex;
-                border-top: 1px solid #ccc;  
+                display: flex; 
                 border-bottom: 1px solid #ccc;
                 position: relative;
                 &:first-child{
-                    border-bottom: none;
-                }
-                &:last-child{
-                    border-top: none;
+                    border-top: 1px solid #ccc; 
                 }
                 // 勾选框
                 .cart-select-box{
@@ -63,8 +58,8 @@
                     transform: translateY(-50%);
                     i{
                         display: block;
-                        width: 20px;
-                        height: 20px;
+                        width: 13px;
+                        height: 13px;
                         background-color: red;
                         &.cart-not-select{
                             background: url("../assets/notSelect.svg") center center no-repeat / cover;

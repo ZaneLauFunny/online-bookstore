@@ -20,5 +20,10 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    
+    .category{
+        height: calc(100% - 60px);
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #ccc;
+    }
 </style>
