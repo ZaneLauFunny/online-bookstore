@@ -36,6 +36,10 @@
                     </div>     
                 </li>
             </ul>
+            <!-- 结算按钮 -->
+            <div class="cart-pay">
+                <button type="button" class="cart-btn">去结算</button>
+            </div>
         </div>
     </div>
 </template>

@@ -32,10 +32,7 @@ h2{
     background-color:#000;
     color: rgba(255,255,255,0.9);
 }
-.listbox{
-    height: 1935px;
-    overflow: hidden;
-}
+
 // 定义全局变量
 @focus-color: #1a780d;
 @font-color: #2c3e50;
@@ -55,13 +52,10 @@ h2{
     // ul
     .footer-link-page{
         @footer-size: 15px;
-        @footer-height: 60px;
+        @footer-height: 50px;
         width: 100%;
         height: @footer-height;
         font-size: @footer-size;
-        // position: fixed;
-        // bottom: 0;
-        // z-index: 100;
         border-top: 1px solid #ccc;
         display: flex;
         justify-content: space-around;
@@ -75,7 +69,8 @@ h2{
             justify-content: center;
             // li路由被选中时样式
             &.router-link-active{
-                color: #1a780d;
+                background-color: @font-color;
+                color: #fff;
                 i.fir{
                     background-image: url("../assets/home-focus.svg");
                 }

@@ -18,15 +18,6 @@ export default{
     created() {
         this.getLocalBookList();
     },
-    // // 图书信息列表的样式处理
-    // mounted() {
-    //     if(this.cartBookList.length === 2){
-    //         $(".cart-book-list").first().css("borderBottom","none");
-    //     }else if(this.cartBookList.length > 2){
-    //         $(".cart-book-list").first().css("borderBottom","none");
-    //         $(".cart-book-list").last().css("borderTop","none");
-    //     }
-    // },
     methods: {
         // 从本地存储获取到用户已经点击加入过购物车的书本
         getLocalBookList() {
@@ -46,7 +37,8 @@ export default{
                     localBookArr[i].cartBookAuthor =  localBookArr[i].author;
                     localBookArr[i].cartBookName =  localBookArr[i].name;
                     localBookArr[i].cartBookPrice =  localBookArr[i].price;
-                    localBookArr[i].noMin =  false;
+                    localBookArr[i].noMin =  true;
+                    localBookArr[i].cartCount =  1;
                     localBookArr[i].noAdd =  false;
                 }
                 this.cartBookList = localBookArr;
