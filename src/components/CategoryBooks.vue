@@ -10,7 +10,7 @@
             <p>-- 对不起，该书库暂未搜录该类图书 --</p>
           </div>
           <ul v-else>
-              <li v-for="book in bookInfo" :key="book.id" @click="showDetal()">
+              <li v-for="(book,index) in bookInfo" :key="book.id"  @click="$emit('addSbook')">
                   <div class="bookImg">
                       <img :src=book.img>
                   </div>
@@ -28,7 +28,7 @@
       </div>
       
   </div>
-  <div class="books-detail">
+  <div class="books-detail " :class="{'show':sBook}">
     <div class="top">
      <div class="detail-img">
         <div class="bookImg">
@@ -63,16 +63,16 @@
         
         <fieldset>
             <legend>内容概要</legend>
-            <span>22222222222222222222222222222222222222222222222222222222222222222222222222222</span>
+            <span>{{}}</span>
         </fieldset>
         
         <fieldset>
             <legend>内容概要</legend>
-            <span>22222222222222222222222222222222222222222222222222222222222222222222222222222</span>
+            <span>{{}}</span>
         </fieldset>
         <fieldset>
             <legend>作者简介</legend>
-            <span>22222222222222222222222222222222222222222222222222222222222222222222222222222</span>
+            <span>{{}}</span>
         </fieldset>
     </div>
   </div>
@@ -85,7 +85,7 @@
 
     export default {
         name: "CategoryBooks",
-        props: ['placeholder','bookInfo','noMatching'],
+        props: ['placeholder','bookInfo','noMatching',"addSbook","sBook"],
         data(){
         return{
              
@@ -98,7 +98,9 @@
 
 <style lang="less" scoped>
 .wrap-category{
-
+    .show{
+        display: block;
+    }
     .books-cate{
         
         .search{
@@ -170,13 +172,22 @@
             }
         }
     }
+    
     .books-detail{
         z-index: 10;
-        position: absolute;
-        left: -100%;
-        width: 90%;
+         width: 100%;
         margin: 0 auto;
-        background: rgb(242, 242, 242);
+        display: none;
+        background: rgb(148, 36, 36);
+        position: absolute;
+        /* left: -100%; */
+        /* width: 90%; */
+        top: 0;
+        height: 100%;
+        z-index: 100;
+        display: none;
+        margin: 0 auto;
+        background: #942424;
         .top{
             margin-bottom:20px; 
             background: #fff;
