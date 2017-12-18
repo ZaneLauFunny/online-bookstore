@@ -1,6 +1,6 @@
 <template>
 <div class="wrap-category">
-  <div class="books-cate" v-if="isShow">
+  <div class="books-cate" >
       <div class="search">
       <input type="search" :placeholder="placeholder" @keyup="$emit('search',$event.target.value)">
       <i class="glyphicon glyphicon-search"></i>
@@ -28,7 +28,7 @@
       </div>
       
   </div>
-  <div class="books-detail" v-else>
+  <div class="books-detail">
     <div class="top">
      <div class="detail-img">
         <div class="bookImg">
@@ -98,7 +98,7 @@
 
 <style lang="less" scoped>
 .wrap-category{
-    
+
     .books-cate{
         
         .search{
