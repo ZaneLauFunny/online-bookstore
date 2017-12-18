@@ -28,18 +28,18 @@ export default{
                 let localBookArr = JSON.parse(localStorage.book),
                     localBookArr_len = localBookArr.length;
                 for(let i = 0;i < localBookArr_len;i++){
-                    localBookArr[i].notSelect =  false;
-                    localBookArr[i].select =  false;
-                    localBookArr[i].moveBookBox =  false;
-                    localBookArr[i].showCount =  true;
-                    localBookArr[i].cartBookImg =  localBookArr[i].img;
-                    localBookArr[i].cartBookName =  localBookArr[i].name;
-                    localBookArr[i].cartBookAuthor =  localBookArr[i].author;
-                    localBookArr[i].cartBookName =  localBookArr[i].name;
-                    localBookArr[i].cartBookPrice =  localBookArr[i].price;
-                    localBookArr[i].noMin =  true;
-                    localBookArr[i].cartCount =  1;
-                    localBookArr[i].noAdd =  false;
+                    localBookArr[i].notSelect = false;
+                    localBookArr[i].select = false;
+                    localBookArr[i].moveBookBox = false;
+                    localBookArr[i].showCount = true;
+                    localBookArr[i].cartBookImg = localBookArr[i].img;
+                    localBookArr[i].cartBookName = localBookArr[i].name;
+                    localBookArr[i].cartBookAuthor = localBookArr[i].author;
+                    localBookArr[i].cartBookName = localBookArr[i].name;
+                    localBookArr[i].cartBookPrice = localBookArr[i].price;
+                    localBookArr[i].noMin = true
+                    localBookArr[i].cartCount = 1;
+                    localBookArr[i].noAdd = false;
                 }
                 this.cartBookList = localBookArr;
             }
