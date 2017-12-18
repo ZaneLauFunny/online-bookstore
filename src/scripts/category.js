@@ -14,7 +14,8 @@ export default{
             notFindMatch: false,
             
             // 是否处在搜索状态
-            searching: false
+            searching: false,
+            sBook:false
         }
     },
     computed:{
@@ -68,6 +69,14 @@ export default{
                    return matchReg.test(item.name) || matchReg.test(item.author);
                });
            }
+       },
+       addSbook(){
+           this.sBook=true;
+           this.classifyObj=JSON.stringify(obj);
+           localStorage.setItem('bookObj',this.classifyObj)
+       },
+       getObj(){
+           this.bookObj=JSON.parse(localStorage.getItem('bookObj'));
        }
     },
     created(){
