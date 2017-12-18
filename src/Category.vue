@@ -8,7 +8,8 @@
              :book-info="bookFilter" 
             :noMatching="notFindMatch"
             @search="searchBook"
-            
+            @addSbook="addSbook()"
+            :sBook=sBook
         />
 
         
@@ -23,7 +24,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
     .category{
-        height: ~"calc(100%-60px)" !important;
+        height: ~"calc(100% - 60px)" ;
         overflow-x: hidden;
         overflow-y: auto;
     }
