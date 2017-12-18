@@ -5,18 +5,36 @@
 }
 html,body{
     width: 100%;
-    min-height: 100%;
+    height: 100%;
     font: 20px 'Avenir', "Microsoft YaHei", Helvetica, Arial, sans-serif;
 }
-body{
-    overflow-y: auto;
+input,textarea,select{
+    outline: none;
 }
-h1,h2,h3,p,ul,html,body{
+h1,h2,h3,h4,p,ul,html,body{
     margin: 0;
     padding: 0;
 }
 ul{
     list-style: none;
+}
+.header{
+    height: 50px;   
+}
+h2{   
+    position: fixed;
+    top: 0; 
+    z-index: 20;
+    width: 100%;height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 18px;
+    background-color:#000;
+    color: rgba(255,255,255,0.9);
+}
+.listbox{
+    height: 1935px;
+    overflow: hidden;
 }
 // 定义全局变量
 @focus-color: #1a780d;
@@ -24,10 +42,15 @@ ul{
 
 // 细节样式
 #app {
+    height: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    height: 100%;
     text-align: center;
     color: @font-color;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
     //底部链接部分
     // ul
     .footer-link-page{
@@ -36,8 +59,9 @@ ul{
         width: 100%;
         height: @footer-height;
         font-size: @footer-size;
-        position: fixed;
-        bottom: 0;
+        // position: fixed;
+        // bottom: 0;
+        // z-index: 100;
         border-top: 1px solid #ccc;
         display: flex;
         justify-content: space-around;
@@ -70,7 +94,7 @@ ul{
                 display: block;
                 width: 20px;
                 margin: 0 auto;
-                height: 20px;
+                height: 20px; 
                 &.fir{
                     background: url("../assets/home.svg") no-repeat center center / cover;
                 }

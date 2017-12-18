@@ -17,19 +17,17 @@
             <router-link :to="{name: 'me'}" tag="li">
                 <i class="for"></i>
                 <span>个人中心</span>
-            </router-link>
-            
+            </router-link>           
         </ul>
     </div>
 </template>
 
 <script>
-    export default {
-        name: "app"
-    };
-
+export default {
+  name: "app"
+};
 </script>
 
 <style lang="less">
-    @import './styles/common.less';
+@import "./styles/common.less";
 </style>

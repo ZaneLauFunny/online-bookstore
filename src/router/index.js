@@ -5,7 +5,8 @@ import Router from 'vue-router'
 import Home from '@/Home'
 import Category from '@/Category'
 import Cart from '@/Cart'
-import Me from '@/Me'
+import Me from '@/Me' 
+import DetailsPage from '@/components/DetailsPage'
 
 Vue.use(Router)
 
@@ -36,6 +37,11 @@ export default new Router({
             path: '/me',
             name: 'me',
             component: Me
+        },
+        {
+            path: '/DetailsPage',
+            name: 'DetailsPage',
+            component: DetailsPage
         }
     ]
 })
